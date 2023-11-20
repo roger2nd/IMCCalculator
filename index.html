@@ -26,34 +26,56 @@
               </div>
             <button type="button" onclick="getIMC()" class="btn btn-primary">Calcular Plano</button>
           </form>
-          <!-- <div id="alertbox" class="alert alert-light text-center" role="alert">
-             IMC: <strong id="imc_value_text">_____</strong> Classificação: <strong id="classf_value_text">_____</strong> Risco: <strong id="risco_value_text">_____</strong>
-          </div> -->
+    </div>
+
+    <div class="container my-custom-container mb-4">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#basico" type="button" role="tab" aria-controls="basico" aria-selected="true">Basico</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#standard" type="button" role="tab" aria-controls="standard" aria-selected="false">Standard</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#premium" type="button" role="tab" aria-controls="premium" aria-selected="false">Premium</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="basico" role="tabpanel" aria-labelledby="basico-tab">
+                Basico
+            </div>
+            <div class="tab-pane fade" id="standard" role="tabpanel" aria-labelledby="standard-tab">
+                Standard
+            </div>
+            <div class="tab-pane fade" id="premium" role="tabpanel" aria-labelledby="premium-tab">
+                Premium
+            </div>
+        </div>
     </div>
 
     <div class="container my-custom-container">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs" id="myTabB" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#basico" type="button" role="tab" aria-controls="home" aria-selected="true">Basico</button>
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#basicoB" type="button" role="tab" aria-controls="basicoB" aria-selected="true">Basico</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#standard" type="button" role="tab" aria-controls="profile" aria-selected="false">Standard</button>
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#standardB" type="button" role="tab" aria-controls="standardB" aria-selected="false">Standard</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#premium" type="button" role="tab" aria-controls="contact" aria-selected="false">Premium</button>
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#premiumB" type="button" role="tab" aria-controls="premiumB" aria-selected="false">Premium</button>
             </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="basico" role="tabpanel" aria-labelledby="basico-tab">
-                    Basico
-                </div>
-                <div class="tab-pane fade" id="standard" role="tabpanel" aria-labelledby="standard-tab">
-                    Standard
-                </div>
-                <div class="tab-pane fade" id="premium" role="tabpanel" aria-labelledby="premium-tab">
-                    Premium
-                </div>
+        </ul>
+        <div class="tab-content" id="myTabContentB">
+            <div class="tab-pane fade show active" id="basicoB" role="tabpanel" aria-labelledby="basicoB-tab">
+                Basico
             </div>
+            <div class="tab-pane fade" id="standardB" role="tabpanel" aria-labelledby="standardB-tab">
+                Standard
+            </div>
+            <div class="tab-pane fade" id="premiumB" role="tabpanel" aria-labelledby="premiumB-tab">
+                Premium
+            </div>
+        </div>
     </div>
 
 </body>

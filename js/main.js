@@ -6,8 +6,7 @@ function getIMC() {
 
     var result = calculate(parseFloat(peso), parseFloat(altura), parseFloat(idade));
 
-    alterAlertMsg(result.mapping.risco, result.mapping.value, result.mapping.classf)
-    console.log(calculate(parseFloat(peso), parseFloat(altura), parseFloat(idade)))
+    updateHTMLValues(result);
 
 }
 
@@ -96,6 +95,15 @@ function alterAlertMsg(argR, argV, argC) {
     document.getElementById("risco_value_text").innerHTML = argR;
     document.getElementById("classf_value_text").innerHTML = argC;
 
+}
+
+function updateHTMLValues(arg) {
+    document.getElementById("basico").innerHTML = "R$"+ arg.basico[0];
+    document.getElementById("standard").innerHTML = "R$" + arg.standard[0];
+    document.getElementById("premium").innerHTML = "R$" + arg.premium[0];
+    document.getElementById("basicoB").innerHTML = "R$" + arg.basico[1];
+    document.getElementById("standardB").innerHTML = "R$" + arg.standard[1];
+    document.getElementById("premiumB").innerHTML = "R$" + arg.premium[1];
 }
 
 function calculaOperatorA (idade, IMC) {
