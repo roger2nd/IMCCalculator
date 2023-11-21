@@ -10,7 +10,7 @@ function getData() {
 
     var result = calculate(parseFloat(peso), parseFloat(altura), parseFloat(idade));
 
-    alterAlertMsg(result.mapping.risco, result.mapping.value)
+    alterAlertMsg(result.mapping.risco, result.mapping.value, result.mapping.classf)
     updateHTMLValues(result);
 
 }
@@ -21,13 +21,40 @@ function calculate(peso, altura, idade) {
    let oa = calculaOperatorA(idade, IMC);
    let ob = calculaOperatorB(result.factor, IMC);
 
+   
    return {
-        "basico": [oa.basico.toFixed(2), ob.basico.toFixed(2)],
-        "standard": [oa.standard.toFixed(2), ob.standard.toFixed(2)],
-        "premium": [oa.premium.toFixed(2), ob.premium.toFixed(2)],
+        "basico": [oa[0].toFixed(2), ob[0].toFixed(2)],
+        "standard": [oa[1].toFixed(2), ob[1].toFixed(2)],
+        "premium": [oa[2].toFixed(2), ob[2].toFixed(2)],
+        "best": getBestValue(oa, ob),
         "mapping": result
    }
 
+}
+
+function getBestValue(a, b) {
+    let oa_minimum = Math.min(...a);
+    let ob_minimum = Math.min(...b);
+    return oa_minimum < ob_minimum ? planMapping(a.indexOf(oa_minimum), "A" ) : planMapping(b.indexOf(ob_minimum), "B")
+}
+
+function planMapping (arg, arg2) {
+    let res;
+    switch (arg) {
+        case 0:
+            res = "basico";
+            break;
+        case 1:
+            res = "standard";
+            break;
+        case 2:
+            res = "premium";
+            break;
+        default:
+            return null
+    }
+    res = res + arg2;
+    return res
 }
 
 function mapping(arg) {
@@ -99,30 +126,38 @@ function alterAlertMsg(argR, argV, argC) {
     }
 
     document.getElementById("imc_value_text").innerHTML = argV.toFixed(2);
+    document.getElementById("class_value_text").innerHTML = argC;
+
 
 }
 
 function updateHTMLValues(arg) {
-    document.getElementById("basico").firstElementChild.innerHTML = "R$"+ arg.basico[0];
-    document.getElementById("standard").firstElementChild.innerHTML = "R$" + arg.standard[0];
-    document.getElementById("premium").firstElementChild.innerHTML = "R$" + arg.premium[0];
+    document.getElementById("basicoA").firstElementChild.innerHTML = "R$"+ arg.basico[0];
+    document.getElementById("standardA").firstElementChild.innerHTML = "R$" + arg.standard[0];
+    document.getElementById("premiumA").firstElementChild.innerHTML = "R$" + arg.premium[0];
     document.getElementById("basicoB").firstElementChild.innerHTML = "R$" + arg.basico[1];
     document.getElementById("standardB").firstElementChild.innerHTML = "R$" + arg.standard[1];
     document.getElementById("premiumB").firstElementChild.innerHTML = "R$" + arg.premium[1];
+
+    let bestEle = document.getElementById(arg.best);
+    bestEle.style.background = "#32de84";
+    bestEle.style.color = "white";
 }
 
 function calculaOperatorA (idade, IMC) {
-    return {
-        "basico": 100 + (idade * 10 * (IMC/10)),
-        "standard": (150 + (idade * 15)) * (IMC/10),
-        "premium": (200 - (IMC * 10) + (idade * 20)) * (IMC/10)
-    }
+
+    let a = 100 + (idade * 10 * (IMC/10));
+    let b = (150 + (idade * 15)) * (IMC/10);
+    let c = (200 - (IMC * 10) + (idade * 20)) * (IMC/10);
+
+    return [a, b, c];
 }
 
 function calculaOperatorB (factor, IMC) {
-    return {
-        "basico": 100 + (factor * 10 * (IMC/10)),
-        "standard": (150 + (factor * 15)) * (IMC/10),
-        "premium": (200 - (IMC * 10) + (factor * 20)) * (IMC/10)
-    }
+
+    let a = 100 + (factor * 10 * (IMC/10));
+    let b =  (150 + (factor * 15)) * (IMC/10);
+    let c = (200 - (IMC * 10) + (factor * 20)) * (IMC/10);
+
+    return [a, b, c];
 }

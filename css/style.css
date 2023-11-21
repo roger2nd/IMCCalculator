@@ -11,6 +11,10 @@
     padding: 0.5rem 0.5rem; 
 }
 
+#standard {
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+}
+
 @media (min-width: 768px) {
     .my-custom-container{
         width:400px;
