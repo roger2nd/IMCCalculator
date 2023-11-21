@@ -1,4 +1,4 @@
-function getIMC() {
+function getData() {
     var peso = document.getElementById("peso").value;
     var altura = document.getElementById("altura").value;
     var idade = document.getElementById("idade").value;
@@ -10,6 +10,7 @@ function getIMC() {
 
     var result = calculate(parseFloat(peso), parseFloat(altura), parseFloat(idade));
 
+    alterAlertMsg(result.mapping.risco, result.mapping.value)
     updateHTMLValues(result);
 
 }
@@ -68,36 +69,36 @@ function mapping(arg) {
 }
 
 function alterAlertMsg(argR, argV, argC) {
+    var ele = document.getElementById("alertbox_IMC");
+    ele.style.display = 'block'
     switch (argR) {
         case "Baixo":
-            document.getElementById("alertbox").style.background="aliceblue";
-            document.getElementById("alertbox").style.color="black";
+            ele.style.background="aliceblue";
+            ele.style.color="black";
             break;
         case "Normal":
-            document.getElementById("alertbox").style.background="#32de84";
-            document.getElementById("alertbox").style.color="black";
+            ele.style.background="#32de84";
+            ele.style.color="black";
             break;
         case "Aumentado":
-            document.getElementById("alertbox").style.background="#FFD700";
-            document.getElementById("alertbox").style.color="black";
+            ele.style.background="#FFD700";
+            ele.style.color="black";
             break;
         case "Moderado":
-            document.getElementById("alertbox").style.background="#FF5F1F";
-            document.getElementById("alertbox").style.color="black";
+            ele.style.background="#FF5F1F";
+            ele.style.color="black";
             break;
         case "Grave":
-            document.getElementById("alertbox").style.background="#FF0800";
-            document.getElementById("alertbox").style.color="white";
+            ele.style.background="#FF0800";
+            ele.style.color="white";
             break;
         case "Muito Grave":
-            document.getElementById("alertbox").style.background="#FF0800";
-            document.getElementById("alertbox").style.color="white";
+            ele.style.background="#FF0800";
+            ele.style.color="white";
             break;
     }
 
     document.getElementById("imc_value_text").innerHTML = argV.toFixed(2);
-    document.getElementById("risco_value_text").innerHTML = argR;
-    document.getElementById("classf_value_text").innerHTML = argC;
 
 }
 

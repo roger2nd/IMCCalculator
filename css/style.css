@@ -1,5 +1,14 @@
+
+.alert_custom {
+    display: none;
+}
+
 .btn-custom {
     width: 100%;
+}
+
+.alert_plano_custom {
+    padding: 0.5rem 0.5rem; 
 }
 
 @media (min-width: 768px) {

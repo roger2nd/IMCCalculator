@@ -10,8 +10,9 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-    <div class="container my-custom-container mb-4">
-        <form>
+    <div class="container my-custom-container mb-2">
+        <br/>
+        <form class="mb-2">
             <div class="form-group">
               <label for="peso">Peso</label>
               <input  type="number" class="form-control" id="peso" aria-describedby="peso" placeholder="Insira seu Peso">
@@ -23,13 +24,16 @@
             <div class="form-group mb-3">
                 <label for="idade">Idade</label>
                 <input type="number" class="form-control" id="idade" placeholder="Insira sua Idade">
-              </div>
+            </div>
+            <button type="button" onclick="getData()" class="btn btn-outline-info btn-custom">Calcular Plano</button>
           </form>
-          <button type="button" onclick="getIMC()" class="btn btn-outline-info btn-custom">Calcular Plano</button>
+          <div id="alertbox_IMC" class="alert alert-light alert_custom text-center" role="alert">
+            IMC: <strong id="imc_value_text"></strong>
+         </div>
     </div>
 
     <div class="container my-custom-container mb-4">
-        <div id="alertbox" class="alert alert-info text-center" role="alert">
+        <div id="alertbox" class="alert alert-info alert_plano_custom text-center" role="alert">
             Plano A
         </div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -57,7 +61,7 @@
     </div>
 
     <div class="container my-custom-container">
-        <div id="alertbox" class="alert alert-info dark text-center" role="alert">
+        <div id="alertbox" class="alert alert-info alert_plano_custom dark text-center" role="alert">
             Plano B
         </div>
         <ul class="nav nav-tabs" id="myTabB" role="tablist">
