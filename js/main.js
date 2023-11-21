@@ -3,6 +3,10 @@ function getIMC() {
     var altura = document.getElementById("altura").value;
     var idade = document.getElementById("idade").value;
 
+    if(peso == "" || altura == "" || idade == "") {
+        alert("Preencha todos os campos!");
+        return;
+    }
 
     var result = calculate(parseFloat(peso), parseFloat(altura), parseFloat(idade));
 
@@ -98,12 +102,12 @@ function alterAlertMsg(argR, argV, argC) {
 }
 
 function updateHTMLValues(arg) {
-    document.getElementById("basico").innerHTML = "R$"+ arg.basico[0];
-    document.getElementById("standard").innerHTML = "R$" + arg.standard[0];
-    document.getElementById("premium").innerHTML = "R$" + arg.premium[0];
-    document.getElementById("basicoB").innerHTML = "R$" + arg.basico[1];
-    document.getElementById("standardB").innerHTML = "R$" + arg.standard[1];
-    document.getElementById("premiumB").innerHTML = "R$" + arg.premium[1];
+    document.getElementById("basico").firstElementChild.innerHTML = "R$"+ arg.basico[0];
+    document.getElementById("standard").firstElementChild.innerHTML = "R$" + arg.standard[0];
+    document.getElementById("premium").firstElementChild.innerHTML = "R$" + arg.premium[0];
+    document.getElementById("basicoB").firstElementChild.innerHTML = "R$" + arg.basico[1];
+    document.getElementById("standardB").firstElementChild.innerHTML = "R$" + arg.standard[1];
+    document.getElementById("premiumB").firstElementChild.innerHTML = "R$" + arg.premium[1];
 }
 
 function calculaOperatorA (idade, IMC) {

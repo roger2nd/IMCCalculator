@@ -1,14 +1,21 @@
+.btn-custom {
+    width: 100%;
+}
+
 @media (min-width: 768px) {
     .my-custom-container{
-        width:600px;
-    }}
+        width:400px;
+    }
+}
     
-    @media (min-width: 992px) {
+@media (min-width: 992px) {
     .my-custom-container{
-        width:720px;
-    }}
+        width:400px;
+    }
+}
     
-    @media (min-width: 1200px) {
+@media (min-width: 1200px) {
     .my-custom-container{
-        width:900px;
-    }}
+        width:400px;
+    }
+}

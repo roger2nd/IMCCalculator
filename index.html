@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -16,7 +16,7 @@
               <label for="peso">Peso</label>
               <input  type="number" class="form-control" id="peso" aria-describedby="peso" placeholder="Insira seu Peso">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-2">
               <label for="altura">Altura</label>
               <input type="number" class="form-control" id="altura" placeholder="Insira sua Altura">
             </div>
@@ -24,11 +24,14 @@
                 <label for="idade">Idade</label>
                 <input type="number" class="form-control" id="idade" placeholder="Insira sua Idade">
               </div>
-            <button type="button" onclick="getIMC()" class="btn btn-primary">Calcular Plano</button>
           </form>
+          <button type="button" onclick="getIMC()" class="btn btn-outline-info btn-custom">Calcular Plano</button>
     </div>
 
     <div class="container my-custom-container mb-4">
+        <div id="alertbox" class="alert alert-info text-center" role="alert">
+            Plano A
+        </div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#basico" type="button" role="tab" aria-controls="basico" aria-selected="true">Basico</button>
@@ -41,19 +44,22 @@
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="basico" role="tabpanel" aria-labelledby="basico-tab">
-                Basico
+            <div class="tab-pane fade show active text-center" id="basico" role="tabpanel" aria-labelledby="basico-tab">
+                <h2>R$ 0,00</h2>
             </div>
-            <div class="tab-pane fade" id="standard" role="tabpanel" aria-labelledby="standard-tab">
-                Standard
+            <div class="tab-pane fade text-center" id="standard" role="tabpanel" aria-labelledby="standard-tab">
+                <h2>R$ 0,00</h2>
             </div>
-            <div class="tab-pane fade" id="premium" role="tabpanel" aria-labelledby="premium-tab">
-                Premium
+            <div class="tab-pane fade text-center" id="premium" role="tabpanel" aria-labelledby="premium-tab">
+                <h2>R$ 0,00</h2>
             </div>
         </div>
     </div>
 
     <div class="container my-custom-container">
+        <div id="alertbox" class="alert alert-info dark text-center" role="alert">
+            Plano B
+        </div>
         <ul class="nav nav-tabs" id="myTabB" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#basicoB" type="button" role="tab" aria-controls="basicoB" aria-selected="true">Basico</button>
@@ -66,14 +72,14 @@
             </li>
         </ul>
         <div class="tab-content" id="myTabContentB">
-            <div class="tab-pane fade show active" id="basicoB" role="tabpanel" aria-labelledby="basicoB-tab">
-                Basico
+            <div class="tab-pane fade show active text-center" id="basicoB" role="tabpanel" aria-labelledby="basicoB-tab">
+                <h2>R$ 0,00</h2>
             </div>
-            <div class="tab-pane fade" id="standardB" role="tabpanel" aria-labelledby="standardB-tab">
-                Standard
+            <div class="tab-pane fade text-center" id="standardB" role="tabpanel" aria-labelledby="standardB-tab">
+                <h2>R$ 0,00</h2>
             </div>
-            <div class="tab-pane fade" id="premiumB" role="tabpanel" aria-labelledby="premiumB-tab">
-                Premium
+            <div class="tab-pane fade text-center" id="premiumB" role="tabpanel" aria-labelledby="premiumB-tab">
+                <h2>R$ 0,00</h2>
             </div>
         </div>
     </div>
